@@ -7,10 +7,15 @@ before_install:
 
 script:
   - docker run -e CI=true adrianorft/docker-react npm run test
-  # script:
-  # - docker run USERNAME/docker-react npm run test -- --coverage
 
-  # script:
-  # - docker run -e CI=true USERNAME/docker-react npm run test
-
-  # language: generic 
+deploy:
+  provider: elasticbeanstalk # travis CI built in list
+  region: "us-west-2"
+  app: "docker"
+  env: "Docker-env-1"
+  bucket_name: "elasticbeanstalk-us-west-2-356794932707"
+  bucket_path: "docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
