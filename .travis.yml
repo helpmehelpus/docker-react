@@ -11,7 +11,7 @@ script:
 deploy:
   provider: elasticbeanstalk # travis CI built in list
   region: "us-west-2"
-  app: "docker"
+  app: "docker-react"
   env: "DockerReact-env"
   bucket_name: "elasticbeanstalk-us-west-2-356794932707"
   bucket_path: "docker"
