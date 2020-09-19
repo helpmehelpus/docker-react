@@ -12,10 +12,10 @@ deploy:
   provider: elasticbeanstalk # travis CI built in list
   region: "us-west-2"
   app: "docker"
-  env: "Docker-env-1"
+  env: "DockerReact-env"
   bucket_name: "elasticbeanstalk-us-west-2-356794932707"
   bucket_path: "docker"
   on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
