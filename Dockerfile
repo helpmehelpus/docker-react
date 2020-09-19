@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:alpine as builder
 
 WORKDIR /app
 
@@ -14,4 +14,5 @@ RUN npm run build
 FROM nginx
 # Elastic Beanstalk looks for EXPOSEd port
 EXPOSE 80 
-COPY --from=0 /app/build /usr/share/nginx/html
+
+COPY --from=builder /app/build /usr/share/nginx/html
