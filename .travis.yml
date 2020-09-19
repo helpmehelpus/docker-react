@@ -6,7 +6,7 @@ before_install:
   - docker build -t adrianorft/adriano-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true adrianorft/docker-react npm run test -- --coverage
+  - docker run -e CI=true USERNAME/docker-react npm run test
   # script:
   # - docker run USERNAME/docker-react npm run test -- --coverage
 
