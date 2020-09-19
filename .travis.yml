@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t adrianorft/adriano-react -f Dockerfile.dev .
+  - docker build -t adrianorft/docker-react -f Dockerfile.dev .
 
 script:
   - docker run -e CI=true adrianorft/docker-react npm run test
